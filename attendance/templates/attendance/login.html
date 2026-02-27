@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WFH Attendance Tracker</title>
+    <link rel="stylesheet" href="{% static 'attendance/css/style.css' %}">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+
+        <!-- Icon -->
+        <div class="icon-circle">
+            ⏰
+        </div>
+
+        <!-- Title -->
+        <h2>WFH Attendance Tracker</h2>
+        <p class="subtitle">Sign in to manage your attendance</p>
+
+        <!-- Form -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Email -->
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="you@company.com" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="••••••••" required>
+            </div>
+
+            <!-- Role Toggle -->
+            <div class="role-toggle">
+                <button type="button" class="role-btn active">Employee</button>
+                <button type="button" class="role-btn">Admin</button>
+            </div>
+
+            <!-- Sign In Button -->
+            <button type="submit" class="login-btn">Sign In</button>
+
+            <!-- Forgot Password -->
+            <a href="#" class="forgot-link">Forgot your password?</a>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
